@@ -28,7 +28,7 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        gcloud run deploy ${{ secrets.CLOUD_SERVICE_NAME }} \
+        gcloud run deploy ${{ secrets.CLOUD_RUN_SERVICE_NAME }} \
           --image docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY_NAME }}:${{ secrets.DOCKERHUB_TAG_NAME }} \
           --platform managed \
           --region ${{ secrets.GCP_REGION }} \
